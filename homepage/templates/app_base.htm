@@ -1,0 +1,39 @@
+<%inherit file="base.htm" />
+
+<%block name="site_center">
+
+    <%block name="index_block">
+    
+    </%block>
+
+</%block>
+
+<%block name="menu_list_items">
+<!-- the python code inside the $ is making the 'home' bold only when on the homepage -->
+  <li class="nav-item ${ 'active' if request.dmp.page == 'index' else ''}">
+   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item ${ 'active' if request.dmp.page == 'about' else ''}">
+    <a class="nav-link" href="about">About</a>
+  </li>
+  <li class="nav-item ${ 'active' if request.dmp.page == 'contact' else ''}">
+    <a class="nav-link" href="contact">Contact</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Account
+    </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Information</a>
+        <a class="dropdown-item" href="#">Settings</a>
+        <a class="dropdown-item" href="#">Payment</a>
+     </div>
+  </li>        
+
+</%block>
+
+<%block name="site_left">
+  Left Side. This text will override the text in base. :)<br>
+  <a href="index">Home</a><br>
+  <a href="contact">Contact</a>
+</%block>

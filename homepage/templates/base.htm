@@ -1,0 +1,79 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+
+<%! 
+    from datetime import datetime 
+%>
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <link rel="icon" src="${ STATIC_URL }homepage/media/python.png" />
+        
+        <script src="${ STATIC_URL}homepage/media/node_modules/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="${ STATIC_URL}homepage/media/node_modules/bootstrap/css/bootstrap.min.css" />
+        <script src="${ STATIC_URL}homepage/media/node_modules/bootstrap/js/bootstrap.min.js"></script>
+       
+        
+
+        <title>
+            <%block name="title_block">
+                DMP
+            </%block>
+        </title>
+
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+
+    </head>
+    <body>
+        <div id="alert_color_change" class="alert alert-danger">The server will explode tonight. sorry</div>
+        
+        
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my_navbar">
+                <img id="top_left_icon" src="${ STATIC_URL }homepage/media/python.png" />
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                    <%block name="menu_list_items"></%block>
+                    </ul>
+                </div>
+            </nav>
+            <img src="${ STATIC_URL }homepage/media/python.png" alt="python" />
+            <div class="title">Welcome to <br/> DMP!</div>
+        </header>
+
+        <main>
+
+            <div id="site_left">
+                <%block name="site_left">
+                    Left Side
+                </%block>
+            </div>
+
+            <div id="site_center">
+                <%block name="site_center">
+                    Center this text will be replaced
+                </%block>
+            </div>
+
+            <div id="site_right">
+                <%block name="site_right">
+                    Right Side
+                </%block>
+            </div>
+        </main>
+
+        <footer>
+            <div>Current Year: ${ datetime.now().year }</div>
+            <div><img src="${ STATIC_URL }homepage/media/copyright.jpeg" id="copyright_img"> Copyright Matt Lant</div>
+        </footer>
+
+    </body>
+</html>

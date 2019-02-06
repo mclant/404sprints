@@ -1,0 +1,110 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #777788;
+}
+
+.clearfix {
+    clear: both;
+}
+
+header {
+    //padding: 50px 20px;
+    text-align: center;
+}
+
+header > .title {
+    display: inline-block;
+    color: #3771A1;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+}
+
+header img {
+    vertical-align: middle;
+    margin-right: 24px;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: auto;
+
+
+    #site_left {
+        background-color: lightblue;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        padding: 10px;
+    }
+
+    #site_center {
+        background-color: lightgreen;
+        margin-left: 200px;
+        margin-right: 200px;
+        height: 100%;
+    }
+
+    #site_right {
+        background-color: aquamarine;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        padding: 20px;
+    }
+    
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 1px solid #CCCCCC;
+    text-align: right;
+}
+
+footer a {
+    display: inline-block;
+    color: #777788;
+    margin: 15px 10% 0 0;
+}
+
+//in the instructions he says to overide the bootstrap color for this, but in class he said its
+//   bad practice to do this, because its overriding the color everwhere for 'alert'. so i understand
+//   that the best way to do this is give it an id so it just on this one element so that is what im 
+//   doing here.
+#alert_color_change {
+    background-color: lightyellow;
+    position: absolute;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    position: float;
+    z-index: 10;
+}
+
+#contact_form {
+    text-align: center;
+    padding: 15px;
+}
+
+#top_left_icon {
+    height: 50px;
+    width: 50px;
+}
+
+#copyright_img {
+    height: 50px;
+    width: 50px;
+}
+
+.title {
+    padding: 30px;
+}
