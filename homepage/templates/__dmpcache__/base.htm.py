@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1549479293.109094
+_modified_time = 1549486548.9932969
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm'
 _template_uri = 'base.htm'
@@ -23,17 +23,17 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def menu_list_items():
-            return render_menu_list_items(context._locals(__M_locals))
-        def site_right():
-            return render_site_right(context._locals(__M_locals))
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
         def site_left():
             return render_site_left(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
+        def menu_list_items():
+            return render_menu_list_items(context._locals(__M_locals))
         def title_block():
             return render_title_block(context._locals(__M_locals))
+        def site_right():
+            return render_site_right(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
@@ -45,7 +45,8 @@ def render_body(context,**pageargs):
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL))
         __M_writer('homepage/media/node_modules/bootstrap/css/bootstrap.min.css" />\n        <script src="')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL))
-        __M_writer('homepage/media/node_modules/bootstrap/js/bootstrap.min.js"></script>\n       \n        \n\n        <title>\n            ')
+        __M_writer('homepage/media/node_modules/bootstrap/js/bootstrap.min.js"></script>\n       \n')
+        __M_writer('\n        <title>\n            ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'title_block'):
             context['self'].title_block(**pageargs)
         
@@ -149,6 +150,6 @@ def render_site_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "39": 2, "40": 5, "41": 10, "42": 10, "43": 12, "44": 12, "45": 13, "46": 13, "47": 14, "48": 14, "53": 21, "54": 25, "55": 28, "56": 29, "57": 29, "58": 38, "59": 38, "64": 44, "65": 48, "66": 48, "71": 57, "76": 63, "81": 69, "82": 74, "83": 74, "84": 75, "85": 75, "91": 19, "97": 19, "103": 44, "114": 55, "120": 55, "126": 61, "132": 61, "138": 67, "144": 67, "150": 144}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "39": 2, "40": 5, "41": 10, "42": 10, "43": 12, "44": 12, "45": 13, "46": 13, "47": 14, "48": 14, "49": 17, "54": 21, "55": 25, "56": 28, "57": 29, "58": 29, "59": 38, "60": 38, "65": 44, "66": 48, "67": 48, "72": 57, "77": 63, "82": 69, "83": 74, "84": 74, "85": 75, "86": 75, "92": 19, "98": 19, "104": 44, "115": 55, "121": 55, "127": 61, "133": 61, "139": 67, "145": 67, "151": 145}}
 __M_END_METADATA
 """
