@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1549486548.9932969
+_modified_time = 1549914228.0406091
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm'
 _template_uri = 'base.htm'
@@ -23,18 +23,19 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        self = context.get('self', UNDEFINED)
-        def site_left():
-            return render_site_left(context._locals(__M_locals))
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
-        def menu_list_items():
-            return render_menu_list_items(context._locals(__M_locals))
         def title_block():
             return render_title_block(context._locals(__M_locals))
+        def menu_list_items():
+            return render_menu_list_items(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
         def site_right():
             return render_site_right(context._locals(__M_locals))
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
+        def site_left():
+            return render_site_left(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n<!DOCTYPE html>\n<html>\n    <meta charset="UTF-8">\n    <head>\n        <link rel="icon" src="')
@@ -55,9 +56,11 @@ def render_body(context,**pageargs):
         __M_writer('        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>\n\n')
         __M_writer('        <script src="/django_mako_plus/dmp-common.min.js"></script>\n        ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( django_mako_plus.links(self) ))
-        __M_writer('\n\n    </head>\n    <body>\n        <div id="alert_color_change" class="alert alert-danger">The server will explode tonight. sorry</div>\n        \n        \n        <header>\n            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my_navbar">\n                <img id="top_left_icon" src="')
+        __M_writer('\n\n    </head>\n    <body>\n        <div id="maintenance_message" class="alert alert-danger">The server will explode tonight. sorry</div>\n        \n        \n        <header>\n            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my_navbar">\n                <img id="top_left_icon" src="')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL ))
-        __M_writer('homepage/media/python.png" />\n                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">\n                    <span class="navbar-toggler-icon"></span>\n                </button>\n                <div class="collapse navbar-collapse" id="navbarNavDropdown">\n                    <ul class="navbar-nav">\n                    ')
+        __M_writer('homepage/media/python.png" />\n                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">\n                    <span class="navbar-toggler-icon"></span>\n                </button>\n                <div class="collapse navbar-collapse" id="navbarNavDropdown">\n                    <ul class="navbar-nav">\n                        <li class="nav-item ')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'index' else ''))
+        __M_writer('">\n                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>\n                        </li>\n                    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'menu_list_items'):
             context['self'].menu_list_items(**pageargs)
         
@@ -81,9 +84,7 @@ def render_body(context,**pageargs):
 
         __M_writer('\n            </div>\n        </main>\n\n        <footer>\n            <div>Current Year: ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( datetime.now().year ))
-        __M_writer('</div>\n            <div><img src="')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL ))
-        __M_writer('homepage/media/copyright.jpeg" id="copyright_img"> Copyright Matt Lant</div>\n        </footer>\n\n    </body>\n</html>\n')
+        __M_writer('</div>\n            <div>&copy; Copyright Matt Lant</div>\n        </footer>\n\n    </body>\n</html>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -150,6 +151,6 @@ def render_site_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "39": 2, "40": 5, "41": 10, "42": 10, "43": 12, "44": 12, "45": 13, "46": 13, "47": 14, "48": 14, "49": 17, "54": 21, "55": 25, "56": 28, "57": 29, "58": 29, "59": 38, "60": 38, "65": 44, "66": 48, "67": 48, "72": 57, "77": 63, "82": 69, "83": 74, "84": 74, "85": 75, "86": 75, "92": 19, "98": 19, "104": 44, "115": 55, "121": 55, "127": 61, "133": 61, "139": 67, "145": 67, "151": 145}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "40": 2, "41": 5, "42": 10, "43": 10, "44": 12, "45": 12, "46": 13, "47": 13, "48": 14, "49": 14, "50": 17, "55": 21, "56": 25, "57": 28, "58": 29, "59": 29, "60": 38, "61": 38, "62": 44, "63": 44, "68": 47, "69": 51, "70": 51, "75": 60, "80": 66, "85": 72, "86": 77, "87": 77, "93": 19, "99": 19, "105": 47, "116": 58, "122": 58, "128": 64, "134": 64, "140": 70, "146": 70, "152": 146}}
 __M_END_METADATA
 """

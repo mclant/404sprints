@@ -30,7 +30,7 @@
 
     </head>
     <body>
-        <div id="alert_color_change" class="alert alert-danger">The server will explode tonight. sorry</div>
+        <div id="maintenance_message" class="alert alert-danger">The server will explode tonight. sorry</div>
         
         
         <header>
@@ -41,6 +41,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
+                        <li class="nav-item ${ 'active' if request.dmp.page == 'index' else ''}">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
                     <%block name="menu_list_items"></%block>
                     </ul>
                 </div>
@@ -72,7 +75,7 @@
 
         <footer>
             <div>Current Year: ${ datetime.now().year }</div>
-            <div><img src="${ STATIC_URL }homepage/media/copyright.jpeg" id="copyright_img"> Copyright Matt Lant</div>
+            <div>&copy; Copyright Matt Lant</div>
         </footer>
 
     </body>
