@@ -79,7 +79,14 @@ TEMPLATES = [
     {
         'NAME': 'django',
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            '/homepage/templates/base.htm',
+            '/homepage/templates/app_base.htm',
+            '/homepage/templates/about.htm',
+            '/homepage/templates/contact.htm',
+            '/homepage/templates/index.htm',
+            '/account/templates/login.htm',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1549914228.025763
+_modified_time = 1550279816.2183738
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -30,16 +30,16 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
         def menu_list_items():
             return render_menu_list_items(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
+        request = context.get('request', UNDEFINED)
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
         def site_left():
             return render_site_left(context._locals(__M_locals))
         def index_block():
             return render_index_block(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'site_center'):
@@ -95,16 +95,16 @@ def render_index_block(context,**pageargs):
 def render_menu_list_items(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
         def menu_list_items():
             return render_menu_list_items(context)
+        request = context.get('request', UNDEFINED)
         self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!-- the python code inside the $ is making the \'home\' bold only when on the homepage -->\n  \n  <li class="nav-item ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'about' else ''))
         __M_writer('">\n    <a class="nav-link" href="about">About</a>\n  </li>\n  <li class="nav-item ')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( 'active' if request.dmp.page == 'contact' else ''))
-        __M_writer('">\n    <a class="nav-link" href="contact">Contact</a>\n  </li>\n  <li class="nav-item dropdown">\n    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n      Account\n    </a>\n      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">\n        <a class="dropdown-item" href="#">Information</a>\n        <a class="dropdown-item" href="#">Settings</a>\n        <a class="dropdown-item" href="#">Payment</a>\n     </div>\n  </li>        \n\n')
+        __M_writer('">\n    <a class="nav-link" href="contact">Contact</a>\n  </li>\n  <li class="nav-item dropdown">\n    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n      Account\n    </a>\n      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">\n        <a class="dropdown-item" href="account/login">Login</a>\n        <a class="dropdown-item" href="#">Settings</a>\n        <a class="dropdown-item" href="#">Payment</a>\n     </div>\n  </li>        \n\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
