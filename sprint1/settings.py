@@ -111,7 +111,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'sprint1db',
         'USER': 'Matt',
-        'PASSWORD': '37Sibh7h!',
+        'PASSWORD': '37sibh7h!',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
