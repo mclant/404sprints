@@ -1,0 +1,35 @@
+-   model: account.user
+    pk: 1
+    fields:
+        password: pbkdf2_sha256$120000$EeQg5PMMnqc3$dj2PA7pLryYa9ZVjTLq6WzQ/cPIRXyAlMNpsL5vfWZo=
+        last_login: 2019-02-19 18:05:39.420231+00:00
+        is_superuser: true
+        username: admin
+        first_name: 'mattlantis'
+        last_name: ''
+        email: matthewclant@gmail.com
+        is_staff: true
+        is_active: true
+        date_joined: 2019-02-19 18:05:04.950301+00:00
+        birthdate: null
+        favcolor: null
+        groups: []
+        user_permissions: []
+
+-   model: account.user
+    pk: 2
+    fields:
+        password: pbkdf2_sha256$120000$EeQg5PMMnqc3$dj2PA7pLryYa9ZVjTLq6WzQ/cPIRXyAlMNpsL5vfWZo=
+        last_login: null
+        is_superuser: false
+        username: luke
+        first_name: Luke
+        last_name: Skywalker
+        email: luke@therebellion.com
+        is_staff: true
+        is_active: true
+        date_joined: 2019-02-19 18:05:04.950301+00:00
+        birthdate: null
+        favcolor: null
+        groups: []
+        user_permissions: []
