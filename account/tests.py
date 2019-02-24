@@ -8,14 +8,18 @@ class AccountTests(TestCase):
     fixtures = [ 'account.yaml' ]
 
     def setUp(self):
-        self.matt = amod.User.objects.get(username='matt')
+        self.matt = amod.User()
+        self.matt.username = 'matthew'
         self.matt.set_password('letmein')
+        self.matt.first_name = 'Matt'
+        self.matt.last_name = 'Lantis'
+        self.matt.birthdate = datetime(2000,1,1)
         self.matt.save()
     
     def test_user_login(self):
         credentials = {
             'username': 'matthew',
-            'password': 'test101',
+            'password': 'letmein',
         }
         response = self.client.post('/account/login', credentials)
         request = response.wsgi_request
@@ -37,5 +41,3 @@ class AccountTests(TestCase):
         u.save()
         u2 = amod.User.objects.get(username='dummer')
         self.assertEqual(u.first_name, u2.first_name, msg="Names should be the same")
-
-        
