@@ -1,14 +1,15 @@
-{% block content %}
+<%inherit file="/homepage/templates/app_base.htm" />
+
+<%block name = "site_center" >
 
 <h1>Please Login.</h1><br>
 <h2>If you are a new user, please create a new account</h2>
 
-<form action="/create_user/" method="POST">
-    <label for="user_name">Enter Username: </label>
-    <input id="user_name" type="text" name="name_field"><br>
-    <label for="user_password">Enter Password: </label>
-    <input id="user_password" type="text" name="password_field"><br>
-    <input type="submit" value="Log In">
+<form method="POST" action="">
+    <table>
+        ${ form.as_table() }
+    </table>
+    <input type="submit" value="Submit">
 </form>
 
-{% endblock %}
+</%block>

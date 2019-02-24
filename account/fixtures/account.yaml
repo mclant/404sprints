@@ -9,7 +9,7 @@
         last_name: ''
         email: matthewclant@gmail.com
         is_staff: true
-        is_active: true
+        is_active: false
         date_joined: 2019-02-19 18:05:04.950301+00:00
         birthdate: null
         favcolor: null
@@ -22,12 +22,12 @@
         password: pbkdf2_sha256$120000$EeQg5PMMnqc3$dj2PA7pLryYa9ZVjTLq6WzQ/cPIRXyAlMNpsL5vfWZo=
         last_login: null
         is_superuser: false
-        username: luke
-        first_name: Luke
-        last_name: Skywalker
+        username: matt
+        first_name: 'Matt'
+        last_name: 'Lantis'
         email: luke@therebellion.com
         is_staff: true
-        is_active: true
+        is_active: false
         date_joined: 2019-02-19 18:05:04.950301+00:00
         birthdate: null
         favcolor: null

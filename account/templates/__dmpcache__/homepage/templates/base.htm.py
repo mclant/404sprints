@@ -5,10 +5,10 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550959955.187875
+_modified_time = 1550963234.891474
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm'
-_template_uri = 'base.htm'
+_template_uri = '/homepage/templates/base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
@@ -23,19 +23,19 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         def site_right():
             return render_site_right(context._locals(__M_locals))
-        def site_left():
-            return render_site_left(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
         request = context.get('request', UNDEFINED)
         def menu_list_items():
             return render_menu_list_items(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
+        def site_left():
+            return render_site_left(context._locals(__M_locals))
         def title_block():
             return render_title_block(context._locals(__M_locals))
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n<!DOCTYPE html>\n<html>\n    <meta charset="UTF-8">\n    <head>\n        <link rel="icon" src="')
@@ -151,6 +151,6 @@ def render_site_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "40": 2, "41": 5, "42": 10, "43": 10, "44": 12, "45": 12, "46": 13, "47": 13, "48": 14, "49": 14, "50": 17, "55": 21, "56": 25, "57": 28, "58": 29, "59": 29, "60": 38, "61": 38, "62": 44, "63": 44, "68": 47, "69": 51, "70": 51, "75": 60, "80": 66, "85": 72, "86": 77, "87": 77, "93": 19, "99": 19, "105": 47, "116": 58, "122": 58, "128": 64, "134": 64, "140": 70, "146": 70, "152": 146}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "40": 2, "41": 5, "42": 10, "43": 10, "44": 12, "45": 12, "46": 13, "47": 13, "48": 14, "49": 14, "50": 17, "55": 21, "56": 25, "57": 28, "58": 29, "59": 29, "60": 38, "61": 38, "62": 44, "63": 44, "68": 47, "69": 51, "70": 51, "75": 60, "80": 66, "85": 72, "86": 77, "87": 77, "93": 19, "99": 19, "105": 47, "116": 58, "122": 58, "128": 64, "134": 64, "140": 70, "146": 70, "152": 146}}
 __M_END_METADATA
 """

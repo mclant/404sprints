@@ -5,10 +5,10 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550965796.592067
+_modified_time = 1550964402.099201
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/app_base.htm'
-_template_uri = 'app_base.htm'
+_template_uri = '/homepage/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
@@ -129,6 +129,6 @@ def render_site_left(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "44": 1, "49": 9, "54": 36, "64": 3, "72": 3, "77": 7, "83": 5, "89": 5, "95": 11, "103": 11, "104": 14, "105": 14, "106": 17, "107": 17, "108": 25, "109": 26, "110": 29, "111": 30, "112": 32, "118": 38, "124": 38, "130": 124}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/app_base.htm", "uri": "/homepage/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"29": 0, "44": 1, "49": 9, "54": 36, "64": 3, "72": 3, "77": 7, "83": 5, "89": 5, "95": 11, "103": 11, "104": 14, "105": 14, "106": 17, "107": 17, "108": 25, "109": 26, "110": 29, "111": 30, "112": 32, "118": 38, "124": 38, "130": 124}}
 __M_END_METADATA
 """
