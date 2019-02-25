@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus',
+    'django_extensions',
     'homepage',
     'account',
 ]
@@ -108,7 +109,7 @@ AUTH_USER_MODEL = 'account.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'sprint1db',
         'USER': 'Matt',
         'PASSWORD': '37sibh7h!',
