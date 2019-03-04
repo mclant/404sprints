@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
@@ -11,7 +12,7 @@ class Product(models.Model):
         ('A', 'Active'),
         ('I', 'Inactive'),
     )
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
     last_modified = models.DateTimeField(auto_now=True)
     status = models.TextField(db_index=True, choices=PRODUCT_CHOICES, default='I')
     name = models.TextField
@@ -24,4 +25,18 @@ class Product(models.Model):
     def image_url(self):
         url = settings.STATIC_URL + 'catalog/media/products/' + self.name
 
+    def images_url(self):
+        urls = []
+        for pi in self.images.all():
+            urls.append(pi.image_url())
+        if not urls:
+            return settings.STATIC_URL + 'catalog/media/products/image_unavailable.jpg'
+        return urls
 
+class ProductImage(models.Model):
+    filename = models.TextField()
+    product = models.ForeignKey('Product',on_delete=models.CASCADE, related_name='images')
+
+    def image_url(self):
+        return settings.STATIC_URL + 'catalog/media/products/' + self.filename
+    
