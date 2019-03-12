@@ -1,5 +1,15 @@
 $((function(context) {
     return function() {
-        console.log('in the js');
+        
+        $('#coolbtn').click(function() {
+
+        $.ajax({
+            "url": "/catalog/api.getdata/"
+        }).done(function(data) {
+            $('#coolTitle').html(data);
+        });
+        })
+
+
     }
-})(DMP_Context.get()));
+})(DMP_CONTEXT.get()));

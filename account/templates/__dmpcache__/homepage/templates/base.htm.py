@@ -5,14 +5,14 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1550963234.891474
+_modified_time = 1552322885.363668
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
-_exports = ['title_block', 'menu_list_items', 'site_left', 'site_center', 'site_right']
+_exports = ['title_block', 'menu_list_items', 'content', 'site_left', 'site_center', 'site_right']
 
 
  
@@ -23,18 +23,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def site_right():
-            return render_site_right(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
-        request = context.get('request', UNDEFINED)
-        def menu_list_items():
-            return render_menu_list_items(context._locals(__M_locals))
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
         def site_left():
             return render_site_left(context._locals(__M_locals))
+        def menu_list_items():
+            return render_menu_list_items(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def site_right():
+            return render_site_right(context._locals(__M_locals))
+        def content():
+            return render_content(context._locals(__M_locals))
+        request = context.get('request', UNDEFINED)
         def title_block():
             return render_title_block(context._locals(__M_locals))
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
@@ -67,7 +69,12 @@ def render_body(context,**pageargs):
 
         __M_writer('\n                    </ul>\n                </div>\n            </nav>\n            <img src="')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)( STATIC_URL ))
-        __M_writer('homepage/media/python.png" alt="python" />\n            <div class="title">Welcome to <br/> DMP!</div>\n        </header>\n\n        <main>\n\n            <div id="site_left">\n                ')
+        __M_writer('homepage/media/python.png" alt="python" />\n            \n            <div class="title">Welcome to <br/> DMP!</div>\n            ')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
+            context['self'].content(**pageargs)
+        
+
+        __M_writer('\n        </header>\n\n        <main>\n\n            <div id="site_left">\n                ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'site_left'):
             context['self'].site_left(**pageargs)
         
@@ -113,6 +120,17 @@ def render_menu_list_items(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_content(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def content():
+            return render_content(context)
+        __M_writer = context.writer()
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_site_left(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -151,6 +169,6 @@ def render_site_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "40": 2, "41": 5, "42": 10, "43": 10, "44": 12, "45": 12, "46": 13, "47": 13, "48": 14, "49": 14, "50": 17, "55": 21, "56": 25, "57": 28, "58": 29, "59": 29, "60": 38, "61": 38, "62": 44, "63": 44, "68": 47, "69": 51, "70": 51, "75": 60, "80": 66, "85": 72, "86": 77, "87": 77, "93": 19, "99": 19, "105": 47, "116": 58, "122": 58, "128": 64, "134": 64, "140": 70, "146": 70, "152": 146}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 3, "22": 0, "42": 2, "43": 5, "44": 10, "45": 10, "46": 12, "47": 12, "48": 13, "49": 13, "50": 14, "51": 14, "52": 17, "57": 21, "58": 25, "59": 28, "60": 29, "61": 29, "62": 38, "63": 38, "64": 44, "65": 44, "70": 47, "71": 51, "72": 51, "77": 54, "82": 62, "87": 68, "92": 74, "93": 79, "94": 79, "100": 19, "106": 19, "112": 47, "123": 54, "134": 60, "140": 60, "146": 66, "152": 66, "158": 72, "164": 72, "170": 164}}
 __M_END_METADATA
 """

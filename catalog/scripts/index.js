@@ -1,3 +1,5 @@
+
+
 (function(context) {
     return function() {
 
@@ -5,10 +7,10 @@
         containers.each(function(i, container) {
             var pid = $(container).attr('data-product-id');
             $.ajax({
-                url: "/catalog/product.title/" + pid,
-            }).done(
-                
-            );
+                url: "/catalog/product.tile/" + pid,
+            }).done(function(content) {
+                $(container).html(content);
+            });
         });
 
     }

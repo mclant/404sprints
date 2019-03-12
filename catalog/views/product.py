@@ -1,4 +1,5 @@
-import Categories from categories as cmod
+from django_mako_plus import view_function
+from catalog import models as cmod
 
 @view_function
 def tile(request, product:cmod.Product):
