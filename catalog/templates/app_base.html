@@ -7,6 +7,6 @@
     <ul id="category_list">
         <li class=${ 'active' if category is None else ''}><a href="/catalog/index">All Products</li>
         %for cat in cmod.Category.objects.order_by('id'):
-            <li class=${ 'active' if category is None else ''}><a href="/catalog/index/${ cat }">${cat}</li>
+            <li class=${ 'active' if category is None else ''}><a href="/catalog/index/${ category.id }">${cat}</li>
     </ul>
 </%block>
