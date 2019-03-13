@@ -5,10 +5,10 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552438399.409944
+_modified_time = 1552441098.737751
 _enable_loop = True
-_template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/index.html'
-_template_uri = 'index.html'
+_template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/product.tile.html'
+_template_uri = 'product.tile.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
@@ -25,23 +25,21 @@ def _mako_generate_namespaces(context):
     pass
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
-    return runtime._inherit_from(context, 'app_base.html', _template_uri)
+    return runtime._inherit_from(context, '/catalog/templates/base_ajax.htm', _template_uri)
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        self = context.get('self', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
-        products = context.get('products', UNDEFINED)
-        self = context.get('self', UNDEFINED)
-        category = context.get('category', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -50,20 +48,20 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        self = context.get('self', UNDEFINED)
         def content():
             return render_content(context)
-        products = context.get('products', UNDEFINED)
-        self = context.get('self', UNDEFINED)
-        category = context.get('category', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n\n    <h1 class="text-center">')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)('Products' if category is None else category.name))
-        __M_writer('</h1>\n    <div id="catalog">\n')
-        for product in products:
-            __M_writer('            <span class="product_container" data-product-id="')
-            __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.id ))
-            __M_writer('"></span>\n')
-        __M_writer('    </div>\n\n')
+        __M_writer('\n<a href="/catalog/product/')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.id))
+        __M_writer('/">\n    <div class="product-tile">\n        <div class="product-image"><img src="')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( product.image_url() ))
+        __M_writer('"/></div>\n        <div class="product-name">')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.name))
+        __M_writer('</div>\n        <div class="product-price">')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.price))
+        __M_writer('</div>\n    </div>\n</a>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -71,6 +69,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/index.html", "uri": "index.html", "source_encoding": "utf-8", "line_map": {"29": 0, "39": 1, "44": 12, "50": 3, "59": 3, "60": 5, "61": 5, "62": 7, "63": 8, "64": 8, "65": 8, "66": 10, "72": 66}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/product.tile.html", "uri": "product.tile.html", "source_encoding": "utf-8", "line_map": {"29": 0, "38": 1, "48": 3, "56": 3, "57": 4, "58": 4, "59": 6, "60": 6, "61": 7, "62": 7, "63": 8, "64": 8, "70": 64}}
 __M_END_METADATA
 """

@@ -1,1 +1,321 @@
-[]
+- model: catalog.category
+  pk: 1
+  fields: {last_modified: !!timestamp '2019-03-12 06:00:00', name: Shoes}
+- model: catalog.category
+  pk: 2
+  fields: {last_modified: !!timestamp '2019-03-12 06:00:00', name: Ropes}
+- model: catalog.category
+  pk: 3
+  fields: {last_modified: !!timestamp '2019-03-12 06:00:00', name: Harnesses}
+- model: catalog.category
+  pk: 4
+  fields: {last_modified: !!timestamp '2019-03-12 06:00:00', name: Belay}
+- model: catalog.product
+  pk: 1
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: La Sportiva Solution, description: 'Awesome shoes, aggressive, good for
+      bouldering and hard sport climbing.', price: '180.00', quantity: 10, reorder_trigger: null,
+    reorder_quantity: null}
+- model: catalog.product
+  pk: 2
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: La Sportiva Otaki, description: Best of the best, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 3
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: La Sportiva Genius, description: Best of the bestest, price: '190.00', quantity: 12,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 4
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: La Sportiva Miura, description: Bestest of the best, price: '160.00', quantity: 11,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 5
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Evolv Defy, description: Best of the evolvs, price: '150.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 6
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: La Sportiva TC Pro, description: Decent shoe, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 7
+  fields: {category: 1, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Evolv Shaman, description: Best of the best, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 8
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Sterling Evolution, description: Awesome rope, price: '280.00', quantity: 10,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 9
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Blue Water Lightning Pro, description: Best of the best, price: '380.00',
+    quantity: 15, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 10
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond 9.4, description: Best of the bestest, price: '190.00', quantity: 12,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 11
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond 9.6, description: Bestest of the best, price: '160.00', quantity: 11,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 12
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Arial, description: Best of the Petzls, price: '150.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 13
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Arial Dry, description: Decent rope, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 14
+  fields: {category: 2, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Beal Tiger, description: Best of the best, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 15
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Arc'teryx FL-365, description: Awesome harness, price: '180.00', quantity: 10,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 16
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond Solution, description: Best of the best, price: '180.00',
+    quantity: 15, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 17
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Misty Mountain Cadillac, description: Best of the bestest, price: '190.00',
+    quantity: 12, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 18
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Mammut Ophir, description: Bestest of the best, price: '160.00', quantity: 11,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 19
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond Aspect, description: Best of the evolvs, price: '150.00',
+    quantity: 15, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 20
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Sitta, description: Decent shoe, price: '180.00', quantity: 15, reorder_trigger: null,
+    reorder_quantity: null}
+- model: catalog.product
+  pk: 21
+  fields: {category: 3, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Hirundos, description: Best of the best, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 22
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Grigri, description: Awesome grigri., price: '180.00', quantity: 10,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 23
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Belay Device, description: Best of the best, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 24
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond ATC, description: Best of the bestest, price: '190.00', quantity: 12,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 25
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Black Diamond Trad Rack, description: Bestest of the best, price: '500.00',
+    quantity: 11, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 26
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Belay Glasses, description: Best of the evolvs, price: '150.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 27
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Wild Country Rock Set, description: Decent shoe, price: '180.00', quantity: 15,
+    reorder_trigger: null, reorder_quantity: null}
+- model: catalog.product
+  pk: 28
+  fields: {category: 4, last_modified: !!timestamp '2019-03-12 06:00:00', status: A,
+    name: Petzl Quickdraw Spirit, description: Best of the best, price: '180.00',
+    quantity: 15, reorder_trigger: null, reorder_quantity: null}
+- model: catalog.productimage
+  pk: 1
+  fields: {filename: banjo.jpg, product: 26}
+- model: catalog.productimage
+  pk: 2
+  fields: {filename: clarinet.png, product: 26}
+  - model: catalog.productimage
+  pk: 3
+  fields: {filename: cymbals.jpg, product: 25}
+- model: catalog.productimage
+  pk: 4
+  fields: {filename: guitar.jpg, product: 25}
+- model: catalog.productimage
+  pk: 5
+  fields: {filename: harp.png, product: 24}
+- model: catalog.productimage
+  pk: 6
+  fields: {filename: piano.jpg, product: 24}
+- model: catalog.productimage
+  pk: 7
+  fields: {filename: recorder.jpg, product: 23}
+  - model: catalog.productimage
+  pk: 8
+  fields: {filename: saxaphone.jpg, product: 23}
+- model: catalog.productimage
+  pk: 9
+  fields: {filename: snare_drum.png, product: 22}
+- model: catalog.productimage
+  pk: 10
+  fields: {filename: tamborine.png, product: 22}
+- model: catalog.productimage
+  pk: 11
+  fields: {filename: triangle.jpg, product: 21}
+- model: catalog.productimage
+  pk: 12
+  fields: {filename: trombone.jpg, product: 21}
+  - model: catalog.productimage
+  pk: 13
+  fields: {filename: trumpet.jpg, product: 20}
+- model: catalog.productimage
+  pk: 14
+  fields: {filename: ukulele.jpg, product: 20}
+- model: catalog.productimage
+  pk: 15
+  fields: {filename: violen.jp2, product: 19}
+- model: catalog.productimage
+  pk: 16
+  fields: {filename: banjo.jpg, product: 19}
+- model: catalog.productimage
+  pk: 17
+  fields: {filename: clarinet.png, product: 18}
+  - model: catalog.productimage
+  pk: 18
+  fields: {filename: banjo.jpg, product: 18}
+- model: catalog.productimage
+  pk: 19
+  fields: {filename: clarinet.png, product: 17}
+- model: catalog.productimage
+  pk: 20
+  fields: {filename: clarinet.png, product: 17}
+- model: catalog.productimage
+  pk: 21
+  fields: {filename: banjo.jpg, product: 16}
+- model: catalog.productimage
+  pk: 22
+  fields: {filename: clarinet.png, product: 16}
+  - model: catalog.productimage
+  pk: 23
+  fields: {filename: banjo.jpg, product: 15}
+- model: catalog.productimage
+  pk: 24
+  fields: {filename: clarinet.png, product: 15}
+- model: catalog.productimage
+  pk: 25
+  fields: {filename: clarinet.png, product: 14}
+- model: catalog.productimage
+  pk: 26
+  fields: {filename: banjo.jpg, product: 14}
+- model: catalog.productimage
+  pk: 27
+  fields: {filename: clarinet.png, product: 13}
+  - model: catalog.productimage
+  pk: 28
+  fields: {filename: banjo.jpg, product: 13}
+- model: catalog.productimage
+  pk: 29
+  fields: {filename: clarinet.png, product: 12}
+- model: catalog.productimage
+  pk: 30
+  fields: {filename: clarinet.png, product: 12}
+- model: catalog.productimage
+  pk: 31
+  fields: {filename: banjo.jpg, product: 11}
+- model: catalog.productimage
+  pk: 32
+  fields: {filename: clarinet.png, product: 11}
+  - model: catalog.productimage
+  pk: 33
+  fields: {filename: banjo.jpg, product: 10}
+- model: catalog.productimage
+  pk: 34
+  fields: {filename: clarinet.png, product: 10}
+- model: catalog.productimage
+  pk: 35
+  fields: {filename: clarinet.png, product: 9}
+- model: catalog.productimage
+  pk: 36
+  fields: {filename: banjo.jpg, product: 9}
+- model: catalog.productimage
+  pk: 37
+  fields: {filename: clarinet.png, product: 8}
+  - model: catalog.productimage
+  pk: 38
+  fields: {filename: banjo.jpg, product: 8}
+- model: catalog.productimage
+  pk: 39
+  fields: {filename: clarinet.png, product: 7}
+- model: catalog.productimage
+  pk: 40
+  fields: {filename: clarinet.png, product: 7}
+- model: catalog.productimage
+  pk: 41
+  fields: {filename: banjo.jpg, product: 6}
+- model: catalog.productimage
+  pk: 42
+  fields: {filename: clarinet.png, product: 6}
+  - model: catalog.productimage
+  pk: 43
+  fields: {filename: banjo.jpg, product: 5}
+- model: catalog.productimage
+  pk: 44
+  fields: {filename: clarinet.png, product: 5}
+- model: catalog.productimage
+  pk: 45
+  fields: {filename: clarinet.png, product: 4}
+- model: catalog.productimage
+  pk: 46
+  fields: {filename: banjo.jpg, product: 4}
+- model: catalog.productimage
+  pk: 47
+  fields: {filename: clarinet.png, product: 3}
+  - model: catalog.productimage
+  pk: 48
+  fields: {filename: banjo.jpg, product: 3}
+- model: catalog.productimage
+  pk: 49
+  fields: {filename: clarinet.png, product: 2}
+- model: catalog.productimage
+  pk: 50
+  fields: {filename: clarinet.png, product: 2}
+- model: catalog.productimage
+  pk: 51
+  fields: {filename: banjo.jpg, product: 1}
+- model: catalog.productimage
+  pk: 52
+  fields: {filename: clarinet.png, product: 1}
+  - model: catalog.productimage
+  pk: 53
+  fields: {filename: banjo.jpg, product: 27}
+- model: catalog.productimage
+  pk: 54
+  fields: {filename: clarinet.png, product: 27}
+- model: catalog.productimage
+  pk: 55
+  fields: {filename: clarinet.png, product: 28}
+- model: catalog.productimage
+  pk: 56
+  fields: {filename: clarinet.png, product: 28}

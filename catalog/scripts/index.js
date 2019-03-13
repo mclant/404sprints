@@ -1,9 +1,9 @@
 
 
-(function(context) {
+$((function(context) {
     return function() {
 
-        var containers = $('.product-container');
+        var containers = $('.product_container');
         containers.each(function(i, container) {
             var pid = $(container).attr('data-product-id');
             $.ajax({
@@ -15,4 +15,4 @@
 
     }
     
-})(DMP_CONTEXT.get());
+})(DMP_CONTEXT.get()));

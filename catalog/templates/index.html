@@ -1,7 +1,12 @@
-<%inherit file="/homepage/templates/base_ajax.htm" />
+<%inherit file="app_base.html" />
 
 <%block name="content">
-    <div class="content">
-        <h3>Congratulations -- you've successfully created a new DMP app!</h3>
+
+    <h1 class="text-center">${'Products' if category is None else category.name}</h1>
+    <div id="catalog">
+        %for product in products:
+            <span class="product_container" data-product-id="${ product.id }"></span>
+        %endfor
     </div>
+
 </%block>
