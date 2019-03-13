@@ -1,0 +1,18 @@
+#product-tile {
+  display: inline-block;
+  max-width: 300px;
+  border: 1;
+  border-radius: 5px;
+}
+
+#product-image {
+  max-width: 280px;
+  margin: auto;
+  width: 50%;
+}
+
+#product-name, #product-price {
+  text-align: center;
+}
+
+/*# sourceMappingURL=product.tile.scss.css.map */

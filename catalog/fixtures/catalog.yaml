@@ -303,7 +303,7 @@
   fields: {filename: clarinet.png, product: 2}
 - model: catalog.productimage
   pk: 51
-  fields: {filename: banjo.jpg, product: 1}
+  fields: {filename: test.jpg, product: 1}
 - model: catalog.productimage
   pk: 52
   fields: {filename: clarinet.png, product: 1}

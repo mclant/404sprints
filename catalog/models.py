@@ -30,8 +30,8 @@ class Product(models.Model):
         urls = []
         for pi in prodimages:
             urls.append(pi.image_url())
-        if len(prodimages) == 0:
-            return settings.STATIC_URL + 'catalog/media/products/image_unavailable.jpg'
+        if not urls:
+            urls.append(settings.STATIC_URL + 'catalog/media/products/image_unavailable.jpg')
         return urls
 
 class ProductImage(models.Model):

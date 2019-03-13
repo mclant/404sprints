@@ -1,5 +1,3 @@
-
-
 $((function(context) {
     return function() {
 

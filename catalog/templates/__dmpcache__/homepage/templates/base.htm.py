@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552359551.5494359
+_modified_time = 1552495139.5560892
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
@@ -23,21 +23,21 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def menu_list_items():
             return render_menu_list_items(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
-        def title_block():
-            return render_title_block(context._locals(__M_locals))
-        def content():
-            return render_content(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         def site_center():
             return render_site_center(context._locals(__M_locals))
+        def title_block():
+            return render_title_block(context._locals(__M_locals))
         def site_right():
             return render_site_right(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def site_left():
             return render_site_left(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n<!DOCTYPE html>\n<html>\n    <meta charset="UTF-8">\n    <head>\n        <link rel="icon" src="')
