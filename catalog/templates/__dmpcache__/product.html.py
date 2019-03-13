@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1552492326.142666
+_modified_time = 1552518906.0933208
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/product.html'
 _template_uri = 'product.html'
@@ -32,9 +32,9 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def site_center():
             return render_site_center(context._locals(__M_locals))
-        product = context.get('product', UNDEFINED)
         self = context.get('self', UNDEFINED)
         allProductImages = context.get('allProductImages', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'site_center'):
@@ -51,9 +51,9 @@ def render_site_center(context,**pageargs):
     try:
         def site_center():
             return render_site_center(context)
-        product = context.get('product', UNDEFINED)
         self = context.get('self', UNDEFINED)
         allProductImages = context.get('allProductImages', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<h1 class="text-center">')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.name))
@@ -68,7 +68,7 @@ def render_site_center(context,**pageargs):
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.price))
         __M_writer('</div>\n        <div class="product-description">')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.description))
-        __M_writer('</div>\n\n        </div>\n\n')
+        __M_writer('</div>\n\n    </div>\n\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

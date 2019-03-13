@@ -157,7 +157,7 @@
 - model: catalog.productimage
   pk: 2
   fields: {filename: clarinet.png, product: 26}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 3
   fields: {filename: cymbals.jpg, product: 25}
 - model: catalog.productimage
@@ -172,7 +172,7 @@
 - model: catalog.productimage
   pk: 7
   fields: {filename: recorder.jpg, product: 23}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 8
   fields: {filename: saxaphone.jpg, product: 23}
 - model: catalog.productimage
@@ -187,7 +187,7 @@
 - model: catalog.productimage
   pk: 12
   fields: {filename: trombone.jpg, product: 21}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 13
   fields: {filename: trumpet.jpg, product: 20}
 - model: catalog.productimage
@@ -202,7 +202,7 @@
 - model: catalog.productimage
   pk: 17
   fields: {filename: clarinet.png, product: 18}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 18
   fields: {filename: banjo.jpg, product: 18}
 - model: catalog.productimage
@@ -217,7 +217,7 @@
 - model: catalog.productimage
   pk: 22
   fields: {filename: clarinet.png, product: 16}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 23
   fields: {filename: banjo.jpg, product: 15}
 - model: catalog.productimage
@@ -232,7 +232,7 @@
 - model: catalog.productimage
   pk: 27
   fields: {filename: clarinet.png, product: 13}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 28
   fields: {filename: banjo.jpg, product: 13}
 - model: catalog.productimage
@@ -247,7 +247,7 @@
 - model: catalog.productimage
   pk: 32
   fields: {filename: clarinet.png, product: 11}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 33
   fields: {filename: banjo.jpg, product: 10}
 - model: catalog.productimage
@@ -262,7 +262,7 @@
 - model: catalog.productimage
   pk: 37
   fields: {filename: clarinet.png, product: 8}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 38
   fields: {filename: banjo.jpg, product: 8}
 - model: catalog.productimage
@@ -277,7 +277,7 @@
 - model: catalog.productimage
   pk: 42
   fields: {filename: clarinet.png, product: 6}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 43
   fields: {filename: banjo.jpg, product: 5}
 - model: catalog.productimage
@@ -292,7 +292,7 @@
 - model: catalog.productimage
   pk: 47
   fields: {filename: clarinet.png, product: 3}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 48
   fields: {filename: banjo.jpg, product: 3}
 - model: catalog.productimage
@@ -303,11 +303,11 @@
   fields: {filename: clarinet.png, product: 2}
 - model: catalog.productimage
   pk: 51
-  fields: {filename: test.jpg, product: 1}
+  fields: {filename: guitar.jpg, product: 1}
 - model: catalog.productimage
   pk: 52
   fields: {filename: clarinet.png, product: 1}
-  - model: catalog.productimage
+- model: catalog.productimage
   pk: 53
   fields: {filename: banjo.jpg, product: 27}
 - model: catalog.productimage

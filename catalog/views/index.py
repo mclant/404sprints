@@ -13,13 +13,15 @@ def process_request(request, category:cmod.Category=None, page:int=1):
     if category is not None:
         products = products.filter(category=category)
 
+    numpages = math.ceil(len(products) / ITEMS_PER_PAGE)
+
     products = products[(page - 1) * ITEMS_PER_PAGE: page * ITEMS_PER_PAGE]
 
     return request.dmp.render('index.html', {
         'category': category,
         'products': products,
         'page': page,
-        'numpages': math.ceil(len(products) / ITEMS_PER_PAGE),
+        'numpages': numpages,
         'allProductImages': productimages,
     })
 
@@ -28,3 +30,4 @@ def tile(request, product:cmod.Product):
     return request.dmp.render('index.tile.html', {
         'product': product,
     })
+
