@@ -15,8 +15,8 @@
         %elif page == numpages:
         <a href="/catalog/index/${ category.id if category is not None else 0 }/${ page - 1 }">Previous Page</a>
         %else:
-        <a href="/catalog/index/${ category.id if category is not None else 0 }/${ page - 1 }">Previous Page</a>
-        <a href="/catalog/index/${ category.id if category is not None else 0 }/${ page + 1 }">Next Page</a>
+        <a id="left-btn" href="/catalog/index/${ category.id if category is not None else 0 }/${ page - 1 }">Previous Page</a>
+        <a id="right-btn" href="/catalog/index/${ category.id if category is not None else 0 }/${ page + 1 }">Next Page</a>
         %endif
     </div>
     </%block>
