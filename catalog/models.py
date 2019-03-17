@@ -23,9 +23,9 @@ class Product(models.Model):
     reorder_quantity = models.IntegerField(null=True)
 
     def image_url(self):
-        return self.images_url()[0]
+        return self.image_urls()[0]
 
-    def images_url(self):
+    def image_urls(self):
         prodimages = ProductImage.objects.filter(product=self)
         urls = []
         for pi in prodimages:

@@ -1,3 +1,7 @@
-
+#category_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 /*# sourceMappingURL=app_base.scss.css.map */
