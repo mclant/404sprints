@@ -5,10 +5,10 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1553109219.518363
+_modified_time = 1553109386.772524
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/app_base.htm'
-_template_uri = 'app_base.htm'
+_template_uri = '/catalog/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django.utils.html
@@ -77,6 +77,6 @@ def render_site_left(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "33": 0, "42": 1, "43": 4, "53": 6, "61": 6, "62": 8, "63": 8, "64": 9, "65": 10, "66": 10, "67": 10, "68": 10, "69": 10, "70": 10, "71": 10, "72": 12, "78": 72}}
+{"filename": "/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/app_base.htm", "uri": "/catalog/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "33": 0, "42": 1, "43": 4, "53": 6, "61": 6, "62": 8, "63": 8, "64": 9, "65": 10, "66": 10, "67": 10, "68": 10, "69": 10, "70": 10, "71": 10, "72": 12, "78": 72}}
 __M_END_METADATA
 """

@@ -1,18 +1,35 @@
-<%inherit file="/catalog/templates/app_base.html"/>
+<%inherit file="/catalog/templates/app_base.htm"/>
 
 <%block name="site_center">
 <h1 class="text-center">${product.name}</h1>
 
-    %for detailimage in allProductImages:
-    <img class="product_detail" src="${detailimage.image_url()}"/>
-    %endfor
+    <div>
+        %for detailimage in allProductImages:
+        <img class="product_detail" src="${detailimage.image_url()}"/>
+        %endfor
 
-    <div class="product-tile">
+        <div class="product-tile">
 
-        <div class="product-name">${product.name}</div>
-        <div class="product-price">${product.price}</div>
-        <div class="product-description">${product.description}</div>
+            <div class="product-name">${product.name}</div>
+            <div class="product-price">${product.price}</div>
+            <div class="product-description">${product.description}</div>
 
+        </div>
+    </div>
+    <div>
+        <h1>Click here to purchase this item</h1>
+        %if product.quantity == 0:
+        <p>quantity not available</p>
+        %else:
+        <p>Quantity: ${product.quantity}</p>
+        %endif
+
+        <form method="POST" action="">
+            <table>
+                ${ form.as_table() }
+            </table>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
 </%block>

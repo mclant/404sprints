@@ -6,8 +6,8 @@
 <%block name="site_left">
     <ul id="category_list">
         <li class=${ 'active' if category is None else ''}><a href="/catalog/index">All Products</li>
-        % for cat in cmod.Category.objects.order_by('id'):
+        %for cat in cmod.Category.objects.order_by('id'):
             <li class=${ 'active' if category is None else ''}><a href="/catalog/index/${ cat.id }">${cat.name | h}</a></li>\
-        % endfor
+        %endfor
     </ul>
 </%block>

@@ -41,3 +41,47 @@ class ProductImage(models.Model):
     def image_url(self):
         return settings.STATIC_URL + 'catalog/media/products/' + self.filename
     
+
+
+from decimal import Decimal
+TAX_RATE = Decimal("0.05")
+
+class Sale(models.Model):
+    user = models.ForeignKey("account.User", on_delete=models.PROTECT)
+    created = models.DateTimeField(auto_now_add=True)
+    purchased = models.DateTimeField(null=True, default=None)
+    subtotal = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+    tax = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+    total = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+    charge_id = models.TextField(null=True, default=None)   # successful charge id from stripe
+
+    def recalculate(self):
+        '''Recalculates the subtotal, tax, and total fields. Does not save the object.'''
+        # complete this method!
+        ##for si in SaleItem.objects.filter(sale=self, status='A'):
+
+
+    def finalize(self, stripeToken):
+        '''Finalizes the sale'''
+        # complete this method!
+        # Ensure this sale isn't already finalized (purchased should be None)
+        # Check product quantities one more time
+        # Call recalculate one more time
+        # Create a charge using the `stripeToken` (https://stripe.com/docs/charges)
+            # be sure to pip install stripe and import stripe into this file
+        # Set purchased=now and charge_id=the id from Stripe
+        # Save
+
+
+class SaleItem(models.Model):
+    STATUS_CHOICES = [
+        ( 'A', 'Active' ),
+        ( 'D', 'Deleted' ),
+    ]
+    status = models.CharField(max_length=1, default=STATUS_CHOICES[0][0], choices=STATUS_CHOICES)
+    sale = models.ForeignKey("Sale", on_delete=models.PROTECT, related_name="items")
+    product = models.ForeignKey("Product", on_delete=models.PROTECT)
+    quantity = models.IntegerField(default=0)
+    price = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+    class Meta:
+        ordering = [ 'product__name' ]
