@@ -10,5 +10,16 @@ class User(AbstractUser):
 
     def get_shopping_cart(self):
             from catalog import models as cmod
+            shopping_cart = cmod.Sale.objects.get(user=self)
+            print('>>>>>>>>>>still trying')
             # retrieve (or create) a Sale with purchased=None for this user
+            if not shopping_cart:
+                shopping_cart = cmod.Sale(user=self)
+                shopping_cart.save()
+                print('>>>>>>>this is where it should create the new shopping cart')
+
+
             # return the Sale object
+            
+            return shopping_cart
+            

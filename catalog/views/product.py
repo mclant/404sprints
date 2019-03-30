@@ -15,11 +15,13 @@ def process_request(request, product:cmod.Product):
     productimages = cmod.ProductImage.objects.filter(product=product)
 
     if request.method == 'POST':
-        form = MyForm(request.POST)
-        if form.is_valid():
-            user = authenticate(username=form.cleaned_data.get('username'), password=form.cleaned_data.get('password'))
-            login(request, user)
-            return HttpResponseRedirect('/')
+        if request.user.is_authenticated:
+            form = MyForm(request.POST)
+            if form.is_valid():
+
+                return HttpResponseRedirect('/catalog/cart')
+        else:
+            return HttpResponseRedirect('/account/login')
     else:
         form = MyForm()
 
@@ -27,9 +29,16 @@ def process_request(request, product:cmod.Product):
     context = {
         'product': product,
         'allProductImages': productimages,
+        'form': form,
     }
     return request.dmp.render('product.html', context)
 
 
 class MyForm(forms.Form):
     quantity = forms.CharField(label="Quantity")
+    product = cmod.Product.objects.get()
+    
+    def clean(self):
+        if self.cleaned_data.get('quantity') < cmod.Product.quantity:
+            raise Exception('Quantity not available')
+    

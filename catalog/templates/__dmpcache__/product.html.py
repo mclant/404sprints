@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1553719181.833915
+_modified_time = 1553876935.510356
 _enable_loop = True
 _template_filename = '/Users/Matt/Documents/School/IS 413/sprint1/catalog/templates/product.html'
 _template_uri = 'product.html'
@@ -30,12 +30,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        product = context.get('product', UNDEFINED)
-        def site_center():
-            return render_site_center(context._locals(__M_locals))
         allProductImages = context.get('allProductImages', UNDEFINED)
         self = context.get('self', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         form = context.get('form', UNDEFINED)
+        def site_center():
+            return render_site_center(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'site_center'):
@@ -50,12 +50,12 @@ def render_body(context,**pageargs):
 def render_site_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        product = context.get('product', UNDEFINED)
-        def site_center():
-            return render_site_center(context)
         allProductImages = context.get('allProductImages', UNDEFINED)
         self = context.get('self', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         form = context.get('form', UNDEFINED)
+        def site_center():
+            return render_site_center(context)
         __M_writer = context.writer()
         __M_writer('\n<h1 class="text-center">')
         __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.name))
@@ -78,8 +78,8 @@ def render_site_center(context,**pageargs):
             __M_writer(django_mako_plus.ExpressionPostProcessor(self)(product.quantity))
             __M_writer('</p>\n')
         __M_writer('\n        <form method="POST" action="">\n            <table>\n                ')
-        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( form ))
-        __M_writer('\n            </table>\n            <input type="submit" value="Submit">\n        </form>\n    </div>\n\n')
+        __M_writer(django_mako_plus.ExpressionPostProcessor(self)( form.as_table() ))
+        __M_writer('\n            </table>\n            <input type="submit" value="Buy Now">\n        </form>\n    </div>\n\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

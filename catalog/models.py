@@ -58,8 +58,10 @@ class Sale(models.Model):
     def recalculate(self):
         '''Recalculates the subtotal, tax, and total fields. Does not save the object.'''
         # complete this method!
-        ##for si in SaleItem.objects.filter(sale=self, status='A'):
+        self.subtotal = 0
 
+        for si in SaleItem.objects.filter(sale=self, status='A'):
+            self.subtotal = self.subtotal + si.price
 
     def finalize(self, stripeToken):
         '''Finalizes the sale'''

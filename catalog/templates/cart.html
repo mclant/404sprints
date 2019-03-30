@@ -1,0 +1,29 @@
+<%inherit file="/catalog/templates/app_base.htm"/>
+
+<%block name="site_center">
+
+    <h2>your shopping cart:</h2>
+
+    <table style="width:100%">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Extended</th>
+            <th>Actions</th>
+        </tr>
+    %for item in si:
+        <tr>
+            <td></td>
+            <td>${item.product.name}</td>
+            <td>${item.product.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.product.price}</td>
+            <td>${item.price}</td>
+            <td><button>Delete</button></td>
+        </tr>
+    %endfor
+    </table>
+
+</%block>
