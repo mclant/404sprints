@@ -15,15 +15,30 @@
         </tr>
     %for item in si:
         <tr>
-            <td></td>
-            <td>${item.product.name}</td>
+            <td><img src="${item.product.image_url()}" width="60px" height="60px"></img></td>
             <td>${item.product.name}</td>
             <td>${item.quantity}</td>
             <td>${item.product.price}</td>
-            <td>${item.price}</td>
+            <td>${item.quantity * item.product.price}</td>
             <td><button>Delete</button></td>
         </tr>
     %endfor
+        <tr>
+            <td></td>
+            <td>Tax</td>
+            <td></td>
+            <td></td>
+            <td>${cart.tax}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td>${cart.total}</td>
+            <td></td>
+        </tr>
     </table>
 
 </%block>
