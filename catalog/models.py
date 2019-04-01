@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from decimal import Decimal
 
 # Create your models here.
 
@@ -61,7 +62,14 @@ class Sale(models.Model):
         self.subtotal = 0
 
         for si in SaleItem.objects.filter(sale=self, status='A'):
-            self.subtotal = self.subtotal + si.price
+            self.subtotal = self.subtotal + (si.price * si.quantity)
+
+        self.tax = self.subtotal * Decimal(0.05)
+        self.tax = round(self.tax, 2)
+
+        self.total = self.tax + self.subtotal
+        self.total = round(self.total, 2)
+
 
     def finalize(self, stripeToken):
         '''Finalizes the sale'''

@@ -17,9 +17,24 @@ def process_request(request, product:cmod.Product):
     if request.method == 'POST':
         if request.user.is_authenticated:
             form = MyForm(request.POST)
+            form.product = product
             if form.is_valid():
-                print('>>>>>>>>>>>' and form)
-                return HttpResponseRedirect('/catalog/cart', {'product':product, 'form':form})
+                quant = form.data['quantity']
+
+                cart = request.user.get_shopping_cart()
+                
+                newitem = cmod.SaleItem(sale=cart, product=product, status='A', quantity=quant, price=product.price)
+                newitem.save()
+
+                si = cmod.SaleItem.objects.filter(sale=cart, status='A')
+
+                context = {
+                    'cart': cart,
+                    'si': si,
+                }
+
+                print('>>>>>>>>>>> made it here')
+                return HttpResponseRedirect('/catalog/cart', context)
         else:
             return HttpResponseRedirect('/account/login')
     else:
@@ -37,9 +52,10 @@ def process_request(request, product:cmod.Product):
 class MyForm(forms.Form):
     quantity = forms.CharField(label="Quantity")
     #product = cmod.Product.objects.get(name=product.name)
-    '''
+    
     def clean(self):
-        if self.cleaned_data.get('quantity') > product.quantity:
+        if int(self.cleaned_data.get('quantity')) > int(self.product.quantity):
             raise forms.ValidationError('Quantity not available')
-    '''
+        return self.cleaned_data
+    
     

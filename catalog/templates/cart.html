@@ -20,7 +20,7 @@
             <td>${item.quantity}</td>
             <td>${item.product.price}</td>
             <td>${item.quantity * item.product.price}</td>
-            <td><button>Delete</button></td>
+            <td><a href=${ "/catalog/cart.remove/%i" % item.pk }>Remove</a></td>
         </tr>
     %endfor
         <tr>
@@ -40,5 +40,6 @@
             <td></td>
         </tr>
     </table>
+    <button>Checkout</button>
 
 </%block>
